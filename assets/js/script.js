@@ -24,17 +24,8 @@ var startQuiz = function() {
    answerBText.textContent = questions[0].answers[1].text;
    answerCText.textContent = questions[0].answers[2].text;
    answerDText.textContent = questions[0].answers[3].text;
-}
-
-var userAnswer = function() {
-    if (this.value !== questions[0].answers.correct) {
-        // penalize time
-        // if time less than 0, end quiz
-        // alert for wrong or correct
-
-        
-    }
-    // else would be correct
+   
+   
 }
 
 startButton.addEventListener('click', quizInfo);
