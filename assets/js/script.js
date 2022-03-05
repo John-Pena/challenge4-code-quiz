@@ -1,14 +1,38 @@
-// You have a time limit for answering these 5 questions
-// Once you have selected your answer, you cannot reselect
-// You will earn points based off your correct answers
-// Getting a question wrong will deduct 10 seconds off your total time
-// When timer has run out, the quiz qill be over
+var startButton = document.getElementById('start');;
+var infoEl = document.getElementById('info');
+var questionContainer = document.getElementById('question-card')
+var questionEl = document.getElementById('question');
+var answerButtons = document.getElementById('answer-button');
 
-// Arrays in JavaScript can be used to store ____?
-// numbers and strings false
-// booleans false
-// other arrays false
-// All of the above true
+
+var quizInfo = function() {
+    infoEl.classList.add('hidden');
+    questionContainer.classList.remove('hidden');
+    startQuiz();
+}
+
+var startQuiz = function() {
+    showQuestion();
+}
+
+var showQuestion = function(questions) {
+    questionEl.innerText = questions;
+}
+
+startButton.addEventListener('click', quizInfo);
+
+let questions = [
+    {
+        question: 'Arrays in JavaScript can be used to store ____?',
+        answers: [
+            {text: 'numbers and strings', correct: false},
+            {text: 'booleans', correct: false},
+            {text: 'other arrays', correct: false},
+            {text: 'All of the above', correct: true}
+        ]
+    }
+
+]
 
 // A string must be closed with a ____ when assigning a variable
 // curly bracket false

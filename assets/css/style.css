@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
 }
 
 body {
@@ -22,13 +23,17 @@ header {
 
 /* Start Quiz Button styling */
 .start-btn {
-    position: absolute;
     padding: 15px 20px;
+    margin-left: 40%;
+    margin-bottom: 10px;
     background-color: #C0C0C0;
     font-size: 20px;
     font-weight: bold;
     border-radius: 5px;
     box-shadow: 0 5px 5px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Information regarding quiz styling begins */
@@ -39,7 +44,6 @@ header {
     box-shadow: 0 5px 5px 5px;
     padding: 10px 15px;
     width: 50vw;
-    display: none;
 }
 
 .title {
@@ -68,12 +72,31 @@ header {
     border-top: 3px solid #A9A9A9;
 }
 
-.btn button {
-    padding: 0 10px;
-    margin: 0 10px;
-    height: 30px;
-    background-color: #C0C0C0;
+.question-box {
+    background-color: #FFFFFF;
+    border: 3px solid #000000;
     border-radius: 5px;
-    box-shadow: 0 3px 3px 3px;
-    font-size: 15px;
+    box-shadow: 0 5px 5px 5px;
+    padding: 10px 15px;
+    width: 800px;
+    max-width: 80%;
+    height: 75vh;
+}
+
+.btn {
+    padding: 15px 20px;
+    margin: 45px 10px;
+    background-color: #C0C0C0;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    display: grid;
+}
+
+.btn:hover {
+    border-color: #000000;
+}
+
+.hidden {
+    display: none;
 }

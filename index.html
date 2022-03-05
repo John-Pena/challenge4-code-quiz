@@ -19,11 +19,8 @@
         </div>
     </header>
 
-    <!-- Start Quiz-->
-    <button class="start-btn">Start</button>
-
     <!-- box with questions and answers holder -->
-    <article class="card-box">
+    <article class="card-box" id="info">
         <section class="title">
             <h2>Information regarding the Quiz</h2>
         </section>
@@ -34,15 +31,24 @@
             <p class="list">3. You will earn points based off your correct answers.</p>
             <p class="list">4. Getting a question wrong will deduct 10 seconds off your total time.</p>
             <p class="list">5. When timer has run out, the quiz will end.</p>
-        </section>
 
-        <!-- Buttons to restart or exit quiz -->
-        <section class="btn">
-            <button class="exit">Exit</button>
-            <button class="resart">Continue</button>
+            <!-- Start Quiz-->
+            <button class="start-btn" id="start">Start</button>
         </section>
 
     </article>
+
+    <section class="question-box hidden" id="question-card">
+        <article>
+            <div id="question">Questions</div>
+            <div id="answer-button">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>
+            </div>
+
+    </section>
 
     <script src="assets\js\script.js"></script>
 </body>
