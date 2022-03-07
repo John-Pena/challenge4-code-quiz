@@ -1,14 +1,16 @@
 var startButton = document.getElementById('start');;
 var infoEl = document.getElementById('info');
+var count = document.getElementById('countdown');
 var questionContainer = document.getElementById('question-card')
 var questionText = document.getElementById('question')
-var answerAText = document.getElementById('btn-a')
-var answerBText = document.getElementById('btn-b')
-var answerCText = document.getElementById('btn-c')
-var answerDText = document.getElementById('btn-d')
+var buttonA = document.getElementById('btn-a')
+var buttonB = document.getElementById('btn-b')
+var buttonC = document.getElementById('btn-c')
+var buttonD = document.getElementById('btn-d')
 
 var questionCounter = 0;
-questionCounter++;
+var timer = 60;
+
 
 var quizInfo = function() {
     infoEl.classList.add('hidden');
@@ -16,64 +18,94 @@ var quizInfo = function() {
     startQuiz();
 }
 
-var startQuiz = function() {
+function startQuiz () {
 
-   questionText.textContent = questions[0].question;
+    questionText.textContent = questions[questionCounter].question;
 
-   answerAText.textContent = questions[0].answers[0].text;
-   answerBText.textContent = questions[0].answers[1].text;
-   answerCText.textContent = questions[0].answers[2].text;
-   answerDText.textContent = questions[0].answers[3].text;
-   
-   
+    buttonA.textContent = questions[questionCounter].choices[0];
+    buttonB.textContent = questions[questionCounter].choices[1];
+    buttonC.textContent = questions[questionCounter].choices[2];
+    buttonD.textContent = questions[questionCounter].choices[3];
 }
 
+var moveOn = document.querySelector('#answer-button');
+
+moveOn.onclick = ()=>{
+    console.log('die');
+    if (questionCounter < questions.length - 1) {
+        questionCounter++;
+
+        startQuiz(questionCounter);
+    }
+    else {
+        window.alert('That is all folks!')
+    }
+};
+
+function countdown () {
+    var timeRemaining = timer;
+    var timeInterval = setInterval(function() {
+        timeRemaining--;
+        count.textContent = timeRemaining;
+        
+        if (timeRemaining === 0) {
+            clearInterval(timeInterval);
+        }
+    }, 1000);
+};
+
 startButton.addEventListener('click', quizInfo);
+startButton.addEventListener('click', countdown);
 
 var questions = [
     {
         question: 'Arrays in JavaScript can be used to store ____?',
-        answers: [
-            {text: 'numbers and strings', correct: false},
-            {text: 'booleans', correct: false},
-            {text: 'other arrays', correct: false},
-            {text: 'All of the above', correct: true}
+        answer: "All of the above",
+        choices: [
+            'numbers and strings',
+            'booleans',
+            'other arrays',
+            'All of the above',
         ]
     },
     {
         question: 'A string must be closed with a ____ when assigning a variable',
-        answers: [
-            {text: 'curly bracket', correct: false},
-            {text: 'paranthesis', correct: false},
-            {text: 'quotes', correct: true},
-            {text: 'sqaure brackets', correct: false}
+        answer: 'quotes',
+        choices: [
+            'curly bracket',
+            'paranthesis',
+            'quotes',
+            'sqaure brackets',
         ]
     },
     {
         question: 'The condition of an if/else statement must be closed with ____',
-        answers: [
-            {text: 'commas', correct: false},
-            {text: 'paranthesis', correct: true},
-            {text: 'curly brackets', correct: false},
-            {text: 'quotes', correct: false}
+        answer: 'paranthesis',
+        choices: [
+            'commas',
+            'paranthesis', 
+            'curly brackets',
+            'quotes',
         ]
     },
     {
         question: 'How would you terminate a while loop',
-        answers: [
-            {text: 'break', correct: true},
-            {text: 'if', correct: false},
-            {text: 'switch', correct: true},
-            {text: 'function', correct: false}
+        answer: 'break',
+        choices: [
+            'break',
+            'if',
+            'switch',
+            'function',
         ]
     },
     {
         question: 'Commonly stored data types DO NOT include',
-        answers: [
-            {text: 'strings', correct: false},
-            {text: 'booleans', correct: false},
-            {text: 'alert', correct: true},
-            {text: 'numbers', correct: false}
+        answer: 'alert',
+        choices: [
+            'strings',
+            'booleans',
+            'alert',
+            'numbers',
         ]
     },
 ]
