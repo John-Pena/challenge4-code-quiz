@@ -19,4 +19,4 @@ This repository is an expansion of using JavaScript to incorporate with HTML and
 ## Website URL
 https://john-pena.github.io/challenge4-code-quiz/
 
-![Website][https://github.com/John-Pena/challenge4-code-quiz/blob/main/assets/images/Website.png]
+![Website](https://github.com/John-Pena/challenge4-code-quiz/blob/main/assets/images/Website.png)
